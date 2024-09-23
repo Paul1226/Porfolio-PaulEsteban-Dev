@@ -1,0 +1,25 @@
+---
+// components
+import { default as ResumeIntro } from './ResumeIntroduction.astro';
+import Estudios from './estudiesSection/Estudios.astro';
+import Proyectos from './Proyectos.astro';
+import SobreMi from './SobreMi.astro';
+---
+<div class="border-2 border-teal-600/20 rounded-xl w-full flex-1 dark:border-teal-800/30 overflow-auto scroll-style overflow-x-hidden">
+    <ResumeIntro />
+    <Estudios />
+    <Proyectos />
+    <SobreMi />
+</div>
+
+<style>
+    .scroll-style{
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: #14b8a6 #ccfbf1;
+    }
+
+    html.dark .scroll-style{
+        scrollbar-color: #14b8a6 #011d1b;
+    }
+</style>

@@ -1,0 +1,90 @@
+---
+---
+<ul class="flex justify-between list-folders rounded-full border-2 border-teal-600/20 dark:border-teal-800/50 overflow-hidden relative transition-colors duration-300 dark:text-teal-50 w-full max-w-[388px] px-1" id="options-nav">
+            
+    <div class="bg-teal-700 dark:bg-teal-200 h-10 absolute top-1/2 -translate-y-1/2 left-1 rounded-full transition-all duration-300 linear" id="indicator"></div>
+    
+    <li class="">
+        <a class="active" href="#inicio">Inicio</a>
+    </li>
+    <li class="">
+        <a href="#estudios">Estudios</a>
+    </li>
+    <li class="">
+        <a href="#proyectos">Proyectos</a>
+    </li>
+    <li class="">
+        <a href="#sobre-mi">Sobre Mi</a>
+    </li>
+</ul>
+
+<style>
+    .list-folders {
+        --teal-500: #14b8a6;
+        --teal-50: #f0fdfa;
+        li {
+            position: relative;
+            a{
+                transition: font-weight 300ms ease-in-out;
+                display: flex;
+                justify-content: center;
+                /* width: 6rem; */
+                width: 100%;
+                max-width: 6rem;
+                padding-block: .75rem;
+                padding-inline: .75rem;
+
+            }
+
+            a.active {
+                font-weight: 600;
+                color: var(--teal-50);
+            }
+        }
+    }
+
+    html.dark {
+        .list-folders {
+            li a.active {
+                color: black;
+            }
+        }
+    }
+
+</style>
+
+<script>
+    const containerNav = document.querySelector('#options-nav') as HTMLUListElement;
+    const $$optionsNav = document.querySelectorAll('#options-nav li a') as NodeListOf<HTMLAnchorElement>;
+    const $FirstoptionsNav = document.querySelector('#options-nav li a') as HTMLAnchorElement;
+    const $indicator = document.querySelector('#indicator') as HTMLDivElement;
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        $FirstoptionsNav.getBoundingClientRect();
+        const inicialWIdth = $FirstoptionsNav.getBoundingClientRect().width;
+        $indicator.style.width = `${inicialWIdth}px`;
+    })
+    $$optionsNav.forEach( (option) => (
+        option.addEventListener('click', () => {
+            const optionRect = option.getBoundingClientRect();
+            const dimensionsNav = containerNav.getBoundingClientRect();
+
+            const widthOption = optionRect.width;
+            const positonOption = optionRect.left - dimensionsNav.left;
+
+            // styles
+            $indicator.style.width = `${widthOption}px`;
+            $indicator.style.left = `${positonOption + widthOption / 2.09}px`;
+            $indicator.style.transform = 'translate(-50%, -50%)';
+
+            // remove classes
+            $$optionsNav.forEach( (option) => {
+                option.classList.remove('active');
+            })
+
+            option.classList.add('active');
+
+        })
+    ))
+</script>

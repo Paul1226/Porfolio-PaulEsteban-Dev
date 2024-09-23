@@ -1,0 +1,76 @@
+---
+const buttonsStyle = 'px-4 py-1 w-max h-8 rounded-full bg-teal-400/30 hover:bg-teal-400/20 transition-all duration-300 ease-in-out flex items-center justify-center gap-1 hover:-translate-y-1 border-2 border-transparent hover:border-teal-600/20 hover:shadow-[0_2px_8px_#00000020]'
+---
+
+<section class="w-full h-full flex justify-center items-center bg-red-5" id="inicio">
+    <div class="w-4/5 h-2/3 flex items-center">
+        <article>
+            <div class="flex gap-3 items-center">
+                <figure class="size-16 rounded-full overflow-hidden">
+                    <img class="w-full h-full object-cover" src="/images/perfil-3-user.webp" alt="Imagen de perfil de usuario" loading="lazy">
+                </figure>
+                
+                <a 
+                    class="flex items-center transition justify-center"
+                    href="https://www.linkedin.com/in/paul-guachichullca-2287602b1/" 
+                    target="_blank" 
+                    rel="noopener" 
+                > 
+                    <div class="flex items-center"> 
+                        <span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
+                            <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"></span> 
+                            <div 
+                                class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"
+                            >Disponible para trabajar</div> 
+                        </span> 
+                    </div> 
+                </a>
+            </div>
+            <div class="flex flex-col gap-6 py-6">
+                <h1 class="font-bold text-6xl text-balance">Hey, soy PaulDev👋</h1>
+                <p class="tracking-[.028rem] text-balance">
+                    Mi pasión por la tecnología comenzó con el manejo de <strong class="text-teal-500 tracking-[.028rem]">Máquinas CNC y diseño digital</strong>, llevándome a estudiar Desarrollo Full-Stack en la <a class="text-teal-500 tracking-[.028rem] font-bold" href="https://www.conquerx.com/" target="_blank" rel="noopener">Academía ConquerBlocks</a> para dominar el frontend y backend.
+                </p>
+
+                <div class="flex items-center gap-3 pt-5">
+                    <a href="#" class={buttonsStyle}>
+                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5"></path><path d="M3 6l9 6l9 -6"></path><path d="M15 18h6"></path><path d="M18 15l3 3l-3 3"></path></svg>
+                        <span>Contáctame</span>
+                    </a>
+                    <a href="#" class={buttonsStyle}>
+                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M8 11l0 5"></path><path d="M8 8l0 .01"></path><path d="M12 16l0 -5"></path><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
+                        <span>Linkedin</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<style>
+    .animate-translate{
+        animation: transl 7s linear infinite;
+    }
+    @keyframes transl {
+        0%{
+            left: -10%;
+            transform: translate(0, -50%) rotate(0deg);
+        }
+        25% {
+            left: 50%;
+            transform: translateY(-50%) rotate(0deg);
+        }
+        50% {
+            left: 60%;
+            transform: translateY(-50%) rotate(180deg);
+        }
+        75% {
+            left: 0;
+            transform: translateY(-50%) rotate(180deg);
+        }
+        100%{
+            left: -10%;
+            transform: translate(0, -50%) rotate(360deg);
+        }
+    }
+</style>
